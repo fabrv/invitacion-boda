@@ -507,7 +507,18 @@ h1, h2, h3 { margin: 0; font-weight: inherit; }
   align-items: center;
   gap: 14px;
 }
-.rsvp__cat { width: min(64vw, 300px); margin-bottom: 8px; }
+.rsvp__cat { 
+  width: min(64vw, 300px); 
+  margin-bottom: 8px;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+@media (prefers-reduced-motion: reduce) { 
+  .rsvp__cat { animation: none; } 
+}
 .rsvp__title { font-size: clamp(48px, 12vw, 84px); line-height: 1.1; }
 .rsvp p { font-size: clamp(16px, 4vw, 19px); max-width: 30ch; }
 .rsvp .rsvp__deadline { font-size: clamp(15px, 3.8vw, 18px); letter-spacing: 0.16em; margin-top: 2px; max-width: none; }
